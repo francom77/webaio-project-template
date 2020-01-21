@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  {{ cookiecutter.project_slug }}:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: {{ cookiecutter.project_slug }}
+    command: adev runserver main.py --host=0.0.0.0 --port=8080
+    env_file: .env
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+
