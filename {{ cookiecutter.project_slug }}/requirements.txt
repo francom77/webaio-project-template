@@ -9,4 +9,4 @@ pytest-aiohttp==0.3.0
 pytest-cov==2.8.1
 PyYAML==5.2
 sentry-sdk==0.14.0
-webaio
+git+https://github.com/francom77/webaio.git
