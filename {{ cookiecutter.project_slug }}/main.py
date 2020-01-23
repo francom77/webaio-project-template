@@ -7,6 +7,8 @@ from aiohttp_swagger import setup_swagger
 from routes import routespatters
 from sentry_sdk.integrations.aiohttp import AioHttpIntegration
 from settings import SENTRY_DSN, config
+from webaio.middlewares import api_exception_handler
+
 
 sentry_sdk.init(
     dsn=SENTRY_DSN,
@@ -15,7 +17,7 @@ sentry_sdk.init(
 
 
 def create_web_app():
-    app = web.Application()
+    app = web.Application(middlewares=[api_exception_handler])
     # Add routes to app
     app['config'] = config
     logging.basicConfig(
