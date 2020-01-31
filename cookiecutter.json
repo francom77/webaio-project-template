@@ -2,5 +2,5 @@
   "project_slug": "webaio-project",
   "project_name": "Webaio Project",
   "description": "A short description of the project",
-  "sentry_dsn": "https://publickey@sentry.yourdomain/3"
+  "port": "8080"
 }

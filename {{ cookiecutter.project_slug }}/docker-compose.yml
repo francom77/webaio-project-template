@@ -5,10 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: {{ cookiecutter.project_slug }}
-    command: adev runserver main.py --host=0.0.0.0 --port=8080
+    command: adev runserver main.py --host=0.0.0.0 --port={{cookiecutter.port}}
     env_file: .env
     volumes:
       - .:/app
     ports:
-      - "8080:8080"
-
+      - "{{ cookiecutter.port }}:{{ cookiecutter.port }}"
